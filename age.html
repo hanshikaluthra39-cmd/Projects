@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎂 Age Calculator</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 320px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      width: 80%;
+      font-size: 16px;
+      border: 2px solid #274741;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:hover, input:focus {
+      border-color: #6C63FF;
+    }
+
+    button {
+      margin-top: 15px;
+      background: #6C63FF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #5548c8;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .highlight {
+      color: #6C63FF;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2> Age Calculator</h2>
+    <p>Enter your date of birth:</p>
+    <input type="date" id="birthDate">
+    <br>
+    <button onclick="calculateAge()">Calculate Age</button>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    function calculateAge() {
+      const birthDate = document.getElementById("birthDate").value;
+      const output = document.getElementById("output");
+
+      if (!birthDate) {
+        output.innerHTML = "⚠️ Please select your birth date!";
+        output.style.color = "red";
+        return;
+      }
+
+      const birth = new Date(birthDate);
+      const today = new Date();
+
+      let ageYears = today.getFullYear() - birth.getFullYear();
+      let ageMonths = today.getMonth() - birth.getMonth();
+      let ageDays = today.getDate() - birth.getDate();
+
+      // Adjust months and days
+      if (ageDays < 0) {
+        ageMonths--;
+        ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+      }
+      if (ageMonths < 0) {
+        ageYears--;
+        ageMonths += 12;
+      }
+
+      output.style.color = "#333";
+      output.innerHTML = `
+         You are <span class="highlight">${ageYears}</span> years,
+        <span class="highlight">${ageMonths}</span> months, and
+        <span class="highlight">${ageDays}</span> days old!
+      `;
+    }
+  </script>
+
+</body>
+</html>
