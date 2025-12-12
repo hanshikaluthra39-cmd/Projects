@@ -2,111 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Hanshika's Portfolio</title>
+  <title>Hanshika • Galaxy Portfolio</title>
+
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"Poppins", sans-serif;
     }
 
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6); /* Adjust darkness */
-    z-index: -1;
-}
-
-
-    header {
-      background-color: #6c5ce7;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
+    /* ============================
+       GALAXY ANIMATED BACKGROUND
+       ============================ */
+    body{
+      height:100vh;
+      overflow-x:hidden;
+      background: radial-gradient(circle at 20% 20%, #6c5ce7, transparent 60%),
+                  radial-gradient(circle at 80% 80%, #a55eea, transparent 60%),
+                  radial-gradient(circle at 50% 50%, #0c0c42, #000);
+      animation: galaxyGlow 10s infinite alternate ease-in-out;
     }
 
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2em;
-    }
-
-    nav {
-      background-color: #cf83bf;
-      text-align: center;
-      padding: 12px 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 1.1em;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-      
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 40px auto;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-
-    section h1 {
-      font-size: 2.5em;
-      margin-bottom: 15px;
-      color: #2d3436;
-    }
-
-    section p {
-      font-size: 1.1em;
-    }
-
-    footer {
-      background-color: #52c2e0;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2em;
+    /* NEBULA COLOR MOVEMENT */
+    @keyframes galaxyGlow {
+      0%{
+        background-position: 20% 20%, 80% 80%, 50% 50%;
       }
-
-      nav a {
-        display: block;
-        margin: 10px 0;
+      100%{
+        background-position: 25% 30%, 70% 90%, 50% 50%;
       }
+    }
 
-      section h1 {
-        font-size: 2em;
-      }
+    /* STAR FIELD (SMALL TWINKLING DOTS) */
+    body::before{
+      content:"";
+      position:fixed;
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+      background-image:
+          radial-gradient(2px 2px at 20% 30%, white, transparent),
+          radial-gradient(1.5px 1.5px at 70% 80%, rgba(255,255,255,0.8), transparent),
+          radial-gradient(1.8px 1.8px at 40% 60%, rgba(255,255,255,0.9), transparent),
+          radial-gradient(1px 1px at 90% 20%, rgba(255,255,255,0.8), transparent),
+          radial-gradient(2px 2px at 10% 80%, rgba(255,255,255,0.9), transparent);
+      animation: starsTwinkle 4s infinite ease-in-out alternate;
+      z-index:-1;
+    }
+
+    @keyframes starsTwinkle {
+      0% { opacity:0.6; }
+      100% { opacity:1; }
+    }
+
+    /* HEADER */
+    header{
+      text-align:center;
+      padding:60px 20px;
+      color:white;
+      animation: fadeDown 1s ease;
+    }
+
+    header h1{
+      font-size:3rem;
+      text-shadow:0 0 15px rgba(255,255,255,0.9);
+    }
+
+    header p{
+      margin-top:10px;
+      font-size:1.3rem;
+      opacity:0.9;
+    }
+
+    /* NAVIGATION */
+    nav{
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(10px);
+      padding:12px 0;
+      text-align:center;
+      border-radius:10px;
+      width:90%;
+      margin:0 auto;
+      box-shadow:0 0 15px rgba(255,255,255,0.2);
+    }
+
+    nav a{
+      color:white;
+      margin:0 18px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:1.15rem;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#ffeaa7;
+      text-shadow:0 0 12px #ffeaa7;
+    }
+
+    /* SECTION */
+    section{
+      max-width:900px;
+      margin:70px auto;
+      padding:50px;
+      background:rgba(255,255,255,0.08);
+      border-radius:15px;
+      backdrop-filter:blur(10px);
+      color:white;
+      text-align:center;
+      box-shadow:0 0 20px rgba(255,255,255,0.3);
+      animation: fadeUp 1.3s ease;
+    }
+
+    section h1{
+      font-size:2.8rem;
+      margin-bottom:15px;
+      text-shadow:0 0 15px rgba(255,255,255,0.9);
+    }
+
+    section p{
+      font-size:1.2rem;
+      line-height:1.6;
+    }
+
+    /* FOOTER */
+    footer{
+      background:rgba(0,0,0,0.4);
+      color:white;
+      text-align:center;
+      padding:20px;
+      font-size:1rem;
+      margin-top:40px;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp{
+      from{ opacity:0; transform:translateY(40px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+
+    @keyframes fadeDown{
+      from{ opacity:0; transform:translateY(-40px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:600px){
+      header h1{ font-size:2.2rem; }
+      nav a{ display:block; margin:10px 0; }
+      section{ padding:30px; width:90%; }
+      section h1{ font-size:2.2rem; }
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <h1>🌟 Hanshika</h1>
-    <p>💻 Web Developer | 🎨 Designer</p>
+    <h1>🌌 Hanshika</h1>
+    <p>💻 Web Developer • 🎨 Designer • 🚀 Dreaming Big</p>
   </header>
 
   <nav>
@@ -117,14 +173,17 @@ body::after {
     <a href="contact.html" target="_blank">📞 Contact</a>
   </nav>
 
-  <section id="home">
-    <h1>👋 Welcome to <br> Hanshika's Portfolio</h1>
-    <p>Explore my world of coding, creativity, and continuous learning! 🚀</p>
+  <section>
+    <h1>👋 Welcome to the Galaxy</h1>
+    <p>
+      Explore my universe of beautiful designs, creative ideas,  
+      and innovative coding projects. 🌟  
+    </p>
   </section>
 
   <footer>
-    <p>© 2025 Hanshika. All rights reserved.</p>
+    <p>© 2025 Hanshika. All Rights Reserved.</p>
   </footer>
 
 </body>
-</htm
+</html>
