@@ -6,143 +6,146 @@
 
 <style>
 /* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Poppins, Arial, sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* GALAXY BACKGROUND */
-body {
-  background: black;
-  overflow-x: hidden;
-  color: #fff;
+body{
+  background:black;
+  overflow-x:hidden;
+  color:white;
 }
 
 /* STARS */
-.stars {
-  width: 2px;
-  height: 2px;
-  background: white;
-  position: absolute;
+.stars{
+  width:2px;
+  height:2px;
+  background:white;
+  position:absolute;
   animation: star 3s linear infinite;
-  opacity: 0.7;
+  opacity:0.8;
 }
 
-@keyframes star {
-  0% { transform: translateY(0px); opacity: 0.7; }
-  100% { transform: translateY(700px); opacity: 0; }
+@keyframes star{
+  0%{ transform: translateY(0px); opacity:1; }
+  100%{ transform: translateY(700px); opacity:0; }
 }
 
 /* NAVBAR */
-nav {
-  background: rgba(160, 60, 160, 0.4);
-  backdrop-filter: blur(8px);
-  text-align: center;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 0 20px #ffb3fa;
+nav{
+  width:100%;
+  background:rgba(20, 20, 30, 0.6);
+  backdrop-filter:blur(10px);
+  padding:18px 0;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 0 25px rgba(150,0,255,0.3);
 }
 
-nav a {
-  color: white;
-  margin: 0 20px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.3s;
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 25px;
+  font-size:18px;
+  font-weight:500;
+  transition:0.3s;
 }
 
-nav a:hover {
-  color: #ffd6ff;
-  text-shadow: 0 0 10px white;
-  transform: scale(1.1);
+nav a:hover{
+  color:#e6b3ff;
+  text-shadow:0 0 10px white;
+  transform:scale(1.1);
 }
 
 /* GLASS CARD */
-.container {
-  width: 60%;
-  margin: 80px auto;
-  padding: 40px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 20px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 25px rgba(255, 150, 255, 0.4);
-  animation: fade 1.5s ease;
+.contact-box{
+  width:70%;
+  margin:120px auto;
+  background:rgba(255,255,255,0.08);
+  padding:40px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 30px rgba(180,0,255,0.4);
+  animation: fadeIn 1.5s ease-in-out;
 }
 
-@keyframes fade {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn{
+  from{ opacity:0; transform:translateY(40px); }
+  to{ opacity:1; transform:translateY(0); }
 }
 
-h1, h2, h3 {
-  text-align: center;
-  color: #ffccff;
-  margin-bottom: 20px;
+h1,h2,h3{
+  text-align:center;
+  margin-bottom:20px;
+  color:#ffccff;
 }
 
-p, li {
-  font-size: 1.2rem;
-  margin: 10px 0;
-  color: #f8e9ff;
+p,li{
+  font-size:1.2rem;
+  margin:10px 0;
+  color:#f5d9ff;
 }
 
-a {
-  color: #ffb3ff;
+a{
+  color:#ffbdfd;
+  text-decoration:none;
 }
 
-footer {
-  text-align: center;
-  margin: 50px 0;
-  color: #ffbdfb;
+footer{
+  text-align:center;
+  margin:50px 0;
+  color:#d8a8ff;
 }
 </style>
 </head>
-
 <body>
 
-<!-- 70 RANDOM STARS -->
+<!-- STARS SCRIPT -->
 <script>
-for (let i = 0; i < 70; i++) {
-  let star = document.createElement("div");
-  star.className = "stars";
-  star.style.left = Math.random() * window.innerWidth + "px";
-  star.style.top = Math.random() * window.innerHeight + "px";
-  star.style.animationDuration = 2 + Math.random() * 3 + "s";
-  document.body.appendChild(star);
+for (let i = 0; i < 80; i++){
+  let s = document.createElement("div");
+  s.className = "stars";
+  s.style.left = Math.random() * window.innerWidth + "px";
+  s.style.top = Math.random() * window.innerHeight + "px";
+  s.style.animationDuration = (2 + Math.random() * 3) + "s";
+  document.body.appendChild(s);
 }
 </script>
 
 <nav>
-  <a href="index.html">🏠 Home</a>
-  <a href="about.html">👩‍💻 About</a>
-  <a href="project.html">📁 Projects</a>
-  <a href="resume.html">📄 Resume</a>
-  <a href="contact.html">📞 Contact</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="project.html">Projects</a>
+  <a href="resume.html">Resume</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
-<div class="container">
+<div class="contact-box">
   <h2>📞 Contact Information</h2>
   <p><strong>👤 Name:</strong> Hanshika Luthra</p>
-  <p><strong>✉️ Email:</strong> hanshikaluthra39@gmail.com</p>
+  <p><strong>📧 Email:</strong> <a href="mailto:hanshikaluthra39@gmail.com">hanshikaluthra39@gmail.com</a></p>
   <p><strong>📱 Phone:</strong> +91 1124364568</p>
   <p><strong>📍 Location:</strong> Ambala, Haryana, India</p>
 
-  <h3>✨ Other Ways to Reach Me</h3>
+  <h3>✨ Other Ways to Reach Me:</h3>
   <ul>
-    <li>📧 Email Message</li>
-    <li>📲 SMS at +91 1124364568</li>
-    <li>💬 WhatsApp Available</li>
+    <li>📧 Email anytime</li>
+    <li>📲 SMS at the given number</li>
+    <li>💬 WhatsApp available</li>
   </ul>
 
   <h1>🙏 THANK YOU FOR VISITING!</h1>
 </div>
 
-<footer>© 2025 Hanshika | All Rights Reserved</footer>
+<footer>
+  © 2025 Hanshika | All Rights Reserved
+</footer>
 
 </body>
 </html>
