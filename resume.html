@@ -2,188 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hanshika's Resume</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanshika - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    *{
+    /* General Styles */
+    body {
       margin: 0;
-      padding:0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      color: #333;
     }
 
-    /* 🌌 GALAXY BACKGROUND */
-    body{
-      height: 100vh;
-      background: radial-gradient(circle at top, #1a0033, #000 70%);
-      overflow-x: hidden;
-      color: #fff;
-      padding: 20px;
-      position: relative;
-    }
-
-    /* ✨ STARS */
-    .stars, .stars2, .stars3{
-      position: absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background-repeat: repeat;
-      background-size: contain;
-      z-index:-1;
-    }
-
-    .stars{
-      background-image: url('https://i.imgur.com/eC3xKQ1.png');
-      animation: starMove 50s linear infinite;
-      opacity:0.6;
-    }
-
-    .stars2{
-      background-image: url('https://i.imgur.com/eC3xKQ1.png');
-      animation: starMove 100s linear infinite;
-      opacity:0.4;
-    }
-
-    .stars3{
-      background-image: url('https://i.imgur.com/eC3xKQ1.png');
-      animation: starMove 150s linear infinite;
-      opacity:0.2;
-    }
-
-    @keyframes starMove{
-      from{ transform: translateY(0); }
-      to{ transform: translateY(-2000px); }
-    }
-
-    /* 🟣 NAVBAR */
-    nav{
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      text-align: center;
-      padding: 12px 0;
-      border-radius: 10px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    /* Navigation Bar */
+    nav {
+      background-color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       position: sticky;
-      top:0;
-      z-index: 20;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #ddd;
     }
 
-    nav a{
-      color: #f7caff;
+    nav a {
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: 600;
-      transition: 0.3s;
-      font-size: 18px;
+      color: #7b2ff7;
+      margin: 0 20px;
+      font-weight: 700;
+      transition: color 0.3s;
     }
 
-    nav a:hover{
-      color:#fff;
-      text-shadow: 0 0 10px #ff7cff;
+    nav a:hover {
+      color: #f107a3;
     }
 
-    /* HEADING */
-    h1{
-      text-align:center;
-      margin-top:20px;
-      color:#ffb8ff;
-      font-size: 40px;
-      text-shadow: 0 0 15px #ff63ff;
-      animation: fadeIn 1.5s ease-in-out;
+    /* Main Container */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
-    /* SECTION HEADINGS */
-    h2{
-      font-size:26px;
-      margin:20px 0 10px;
-      color:#ff99ff;
-      text-shadow: 0 0 10px #ff40ff;
+    h1, h2 {
+      color: #7b2ff7;
+      margin-bottom: 10px;
     }
 
-    /* GLASS CARD STYLE */
-    .card{
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      padding:20px;
-      margin:15px 0;
-      border-radius:12px;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 0 12px rgba(255,255,255,0.08);
+    h1 {
+      text-align: center;
     }
 
-    p, li{
-      font-size:18px;
-      line-height:1.6;
-      color:#e3d2ff;
+    /* Sections */
+    .section {
+      margin-bottom: 30px;
     }
 
-    @keyframes fadeIn{
-      from{opacity:0; transform: translateY(-20px);}
-      to{opacity:1; transform: translateY(0);}
+    .section p, .section li {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "•";
+      color: #f107a3;
+      margin-right: 10px;
+    }
+
+    /* Contact Info */
+    .contact p {
+      margin: 5px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- 🌌 STARS LAYERS -->
-<div class="stars"></div>
-<div class="stars2"></div>
-<div class="stars3"></div>
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<!-- NAVBAR -->
-<nav>
-  <a href="index.html">🏠 Home</a>
-  <a href="about.html" target="_blank">👩‍💼 About</a>
-  <a href="project.html" target="_blank">📁 Projects</a>
-  <a href="resume.html" target="_blank">📄 Resume</a>
-  <a href="contact.html" target="_blank">📞 Contact</a>
-</nav>
+  <!-- Main Content -->
+  <div class="container" id="resume">
+    <h1>Hanshika – Resume</h1>
 
-<h1>👩‍💻 HANSHIKA – Resume</h1>
+    <!-- Contact -->
+    <div class="section contact">
+      <p>📧 Email: hanshikaluthra39@gmail.com</p>
+      <p>📞 Phone: [Your phone number]</p>
+      <p>📍 Address: Baldev Nagar, Ambala City</p>
+      <p>🏷 Pin Code: 134003</p>
+    </div>
 
-<div class="card">
-  <p><strong>📧 Email:</strong> hanshikaluthra39@gmail.com</p>
-  <p><strong>📞 Phone:</strong> [Your phone number]</p>
-  <p><strong>📍 Address:</strong> Baldev Nagar, Ambala City</p>
-  <p><strong>📮 Pin Code:</strong> 134003</p>
-</div>
+    <!-- Career Objective -->
+    <div class="section">
+      <h2>🎯 Career Objective</h2>
+      <p>A motivated student passionate about web development 🌐, eager to learn and grow in a professional environment.</p>
+    </div>
 
-<div class="card">
-  <h2>🎯 Career Objective</h2>
-  <p>A motivated student passionate about web development 🌐, eager to learn and grow in a professional environment.</p>
-</div>
+    <!-- Education -->
+    <div class="section">
+      <h2>🎓 Education</h2>
+      <ul>
+        <li>Matriculation (10th) – 76%</li>
+      </ul>
+    </div>
 
-<div class="card">
-  <h2>🎓 Education</h2>
-  <p>📘 Matriculation (10th) – 76%</p>
-</div>
-
-<div class="card">
-  <h2>🖥️ Computer Skills</h2>
-  <p><strong>Basic:</strong> MS Word, Excel, PowerPoint</p>
-  <p><strong>IT Skills:</strong> HTML, CSS</p>
-</div>
-
-<div class="card">
-  <h2>💪 Strengths</h2>
-  <ul>
-    <li>Positive Attitude</li>
-    <li>Good Communication</li>
-    <li>Quick Learner</li>
-    <li>Hard-working</li>
-  </ul>
-</div>
-
-<div class="card">
-  <h2>🎵 Hobbies</h2>
-  <ul>
-    <li>Writing & Reading</li>
-    <li>Listening to Music</li>
-  </ul>
-</div>
+    <!-- Skills -->
+    <div class="section">
+      <h2>💻 Computer Skills</h2>
+      <ul>
+        <li>MS Word, Excel, PowerPoint</li>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Basic Web Design & Development</li>
+      </ul>
+    </div>
+  </div>
 
 </body>
 </html>
