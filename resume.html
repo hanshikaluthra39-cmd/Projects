@@ -3,16 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Hanshika's Resume</title>
+
   <style>
+    *{
+      margin: 0;
+      padding:0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
     body{
       background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOzwSuhQCFMf-A88Ynl3on7TMDDyyzrASjiw&s');
       background-repeat: no-repeat;
       background-size: cover;
+      background-attachment: fixed;
+      padding:20px;
+      color: #222;
     }
+
+    /* NAVBAR */
     nav {
-      background: #cf83bf;
+      background: rgba(207, 131, 191, 0.8);
       text-align: center;
-      padding: 10px 0;
+      padding: 12px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(3px);
     }
 
     nav a {
@@ -20,62 +38,104 @@
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     nav a:hover {
       text-decoration: underline;
+      color: #ffe9fd;
+      transform: scale(1.1);
+    }
+
+    /* HEADING */
+    h1{
+      text-align:center;
+      margin-top:20px;
+      color:#3d003d;
+      text-shadow: 2px 2px 4px rgba(255,255,255,0.3);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    hr{
+      border: none;
+      height: 2px;
+      background:#cf83bf;
+      margin:15px 0;
+      border-radius:5px;
+    }
+
+    h2{
+      color:#5a005a;
+      margin-bottom:10px;
+    }
+
+    p, li{
+      font-size:18px;
+      line-height:1.6;
+    }
+
+    ul{
+      margin-left:20px;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeIn{
+      from{opacity:0; transform: translateY(-20px);}
+      to{opacity:1; transform: translateY(0);}
     }
   </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="about.html" target="_blank">👩‍💼 About</a>
-    <a href="project.html" target="_blank">📁 Projects</a>
-    <a href="resume.html" target="_blank">📄 Resume</a>
-    <a href="contact.html" target="_blank">📞 Contact</a>
-  </nav>
+  <a href="index.html">🏠 Home</a>
+  <a href="about.html" target="_blank">👩‍💼 About</a>
+  <a href="project.html" target="_blank">📁 Projects</a>
+  <a href="resume.html" target="_blank">📄 Resume</a>
+  <a href="contact.html" target="_blank">📞 Contact</a>
+</nav>
 
-  <h1>👩‍💻 HANSHIKA</h1>
-  <hr>
+<!-- NAME -->
+<h1>👩‍💻 HANSHIKA</h1>
+<hr>
 
-  <p><strong>📧 Email:</strong> hanshikaluthra39@gmail.com</p>
-  <p><strong>📞 Phone:</strong> [Your phone number here]</p>
-  <p><strong>📍 Address:</strong> Baldev Nagar, Ambala City</p>
-  <p><strong>📮 Pin Code:</strong> 134003</p>
+<p><strong>📧 Email:</strong> hanshikaluthra39@gmail.com</p>
+<p><strong>📞 Phone:</strong> [Your phone number here]</p>
+<p><strong>📍 Address:</strong> Baldev Nagar, Ambala City</p>
+<p><strong>📮 Pin Code:</strong> 134003</p>
 
-  <hr>
-  <h2>🎯 <strong>Career Objective</strong></h2>
-  <p>
-    A motivated and hard-working recent graduate with an excellent academic record, seeking a web developer role to enhance the online user experience and learn new web technologies. 💻<br>
-    To obtain an internship as a web developer at a dynamic technology startup where I can utilize my hands-on project experience in cross-browser development and contribute to building effective web solutions. 🚀
-  </p>
+<hr>
+<h2>🎯 <strong>Career Objective</strong></h2>
+<p>
+  A motivated and hard-working student with strong interest in web development 💻.
+  Seeking an opportunity to learn, grow, and contribute to a professional team 🚀.
+</p>
 
-  <hr>
-  <h2>🎓 <strong>Education</strong></h2>url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOzwSuhQCFMf-A88Ynl3on7TMDDyyzrASjiw&s');
-  <p>📘 Matriculation (10th) – 76%</p>
+<hr>
+<h2>🎓 <strong>Education</strong></h2>
+<p>📘 Matriculation (10th) – 76%</p>
 
-  <hr>
-  <h2>🖥️ <strong>Computer Skills</strong></h2>
-  <p><strong>🧰 Basic:</strong> MS Word, MS Excel, MS PowerPoint</p>
-  <p><strong>🌐 IT Skills:</strong> HTML, CSS</p>
+<hr>
+<h2>🖥️ <strong>Computer Skills</strong></h2>
+<p><strong>🧰 Basic:</strong> MS Word, MS Excel, MS PowerPoint</p>
+<p><strong>🌐 IT Skills:</strong> HTML, CSS</p>
 
-  <hr>
-  <h2>💪 <strong>Strengths</strong></h2>
-  <ul>
-    <li>😊 Positive attitude</li>
-    <li>🗣️ Good communication skills</li>
-    <li>⚡ Quick learner</li>
-    <li>🛠️ Hard-working</li>
-  </ul>
+<hr>
+<h2>💪 <strong>Strengths</strong></h2>
+<ul>
+  <li>😊 Positive attitude</li>
+  <li>🗣️ Good communication skills</li>
+  <li>⚡ Quick learner</li>
+  <li>🛠️ Hard-working</li>
+</ul>
 
-  <hr>
-  <h2>🎵 <strong>Hobbies</strong></h2>
-  <ul>
-    <li>✍️ Writing and 📖 Reading</li>
-    <li>🎧 Listening to music</li>
-  </ul>
+<hr>
+<h2>🎵 <strong>Hobbies</strong></h2>
+<ul>
+  <li>✍️ Writing & 📖 Reading</li>
+  <li>🎧 Listening to music</li>
+</ul>
 
 </body>
 </html>
