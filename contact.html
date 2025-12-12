@@ -4,72 +4,104 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hanshika | Contact</title>
+
   <style>
-    body {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: Arial, sans-serif;
+    }
+
+    body {
       background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOzwSuhQCFMf-A88Ynl3on7TMDDyyzrASjiw&s');
       background-repeat: no-repeat;
       background-size: cover;
       background-attachment: fixed;
       color: #333;
-      margin: 0;
     }
 
+    /* NAVBAR */
     nav {
-      background-color: #cf83bf;
+      background-color: rgba(207, 131, 191, 0.9);
       text-align: center;
       padding: 15px 0;
       position: sticky;
       top: 0;
+      z-index: 10;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+      backdrop-filter: blur(4px);
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 20px;
+      margin: 0 22px;
       font-size: 1.1em;
       font-weight: bold;
+      transition: 0.3s ease;
+      display: inline-block;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      transform: scale(1.12);
+      color: #ffe9fb;
+      text-shadow: 0 0 8px white;
     }
 
+    /* MAIN CARD */
     .container {
       background-color: rgba(255, 255, 255, 0.95);
       max-width: 700px;
-      margin: 60px auto;
+      margin: 70px auto;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 1.2s ease-in-out;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       text-align: center;
-      color: #6a1b6a;
+      color: #5b015b;
+      margin-bottom: 15px;
     }
 
     p {
       font-size: 1.1em;
-      margin: 10px 0;
+      margin: 12px 0;
+    }
+
+    /* LINKS STYLE */
+    a {
+      color: #6a1b6a;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #a300a3;
     }
 
     ul {
       margin-left: 20px;
-      padding-left: 10px;
+      padding-left: 0;
     }
 
     li {
-      margin: 5px 0;
+      margin: 7px 0;
+      font-size: 1.05em;
     }
 
     footer {
       text-align: center;
       margin: 40px 0;
       font-weight: bold;
-      color: #555;
+      color: #444;
     }
 
+    /* RESPONSIVE */
     @media (max-width: 600px) {
       nav a {
         display: block;
@@ -78,40 +110,47 @@
 
       .container {
         margin: 20px;
-        padding: 20px;
+        padding: 22px;
       }
+    }
+
+    /* ANIMATION */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="index.html" target="_blank" rel="noopener noreferrer">🏠 Home</a>
-    <a href="about.html" target="_blank" rel="noopener noreferrer">👩‍💻 About</a>
-    <a href="project.html" target="_blank" rel="noopener noreferrer">📁 Projects</a>
-    <a href="resume.html" target="_blank" rel="noopener noreferrer">📄 Resume</a>
+    <a href="index.html" target="_blank">🏠 Home</a>
+    <a href="about.html" target="_blank">👩‍💻 About</a>
+    <a href="project.html" target="_blank">📁 Projects</a>
+    <a href="resume.html" target="_blank">📄 Resume</a>
     <a href="contact.html">📞 Contact</a>
   </nav>
 
   <div class="container">
     <h2>📞 Contact Information</h2>
+
     <p><strong>👤 Name:</strong> Hanshika Luthra</p>
     <p><strong>✉️ Email:</strong> <a href="mailto:hanshikaluthra39@gmail.com">hanshikaluthra39@gmail.com</a></p>
-    <p><strong>📱 Phone:</strong> <a href="tel:+911124364568">+91 1124364568</a></p>
+    <p><strong>📱 Phone:</strong> <a href="#">+91 1124364568</a></p>
     <p><strong>📍 Location:</strong> Ambala, Haryana, India</p>
 
-    <h3>✨ Other Ways to Reach Me:</h3>
+    <h3>✨ Other Ways to Reach Me</h3>
     <ul>
-      <li>📧 Send an Email (above mentioned)</li>
-      <li>📲 Text via SMS at <a href="tel:+911124364568">+91 1124364568</a></li>
-      <li>💬 Message on WhatsApp at <a href="https://wa.me/911124364568" target="_blank" rel="noopener noreferrer">+91 1124364568</a></li>
+      <li>📧 Send an Email (preferred)</li>
+      <li>📲 SMS on <a href="#">+91 1124364568</a></li>
+      <li>💬 WhatsApp Message: <a href="#">Click Here</a></li>
     </ul>
 
     <h1>🙏 THANK YOU FOR VISITING!</h1>
   </div>
 
   <footer>
-    &copy; 2025 Hanshika Luthra | All rights reserved.
+    © 2025 Hanshika Luthra | All Rights Reserved
   </footer>
 
 </body>
