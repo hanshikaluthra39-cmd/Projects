@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Hanshika • Galaxy Portfolio</title>
+  <meta charset="UTF-8">
+  <title>Hanshika | Portfolio</title>
 
   <style>
     *{
@@ -12,177 +12,223 @@
       font-family:"Poppins", sans-serif;
     }
 
-    /* ============================
-       GALAXY ANIMATED BACKGROUND
-       ============================ */
+    /* -------------------------
+         PREMIUM GALAXY BACKGROUND
+       ------------------------- */
     body{
-      height:100vh;
+      background: radial-gradient(circle at top, #4b2da3, #120628 60%, #04030a 100%);
+      min-height:100vh;
       overflow-x:hidden;
-      background: radial-gradient(circle at 20% 20%, #6c5ce7, transparent 60%),
-                  radial-gradient(circle at 80% 80%, #a55eea, transparent 60%),
-                  radial-gradient(circle at 50% 50%, #0c0c42, #000);
-      animation: galaxyGlow 10s infinite alternate ease-in-out;
+      color:#fff;
+      position:relative;
     }
 
-    /* NEBULA COLOR MOVEMENT */
-    @keyframes galaxyGlow {
-      0%{
-        background-position: 20% 20%, 80% 80%, 50% 50%;
-      }
-      100%{
-        background-position: 25% 30%, 70% 90%, 50% 50%;
-      }
+    /* GALAXY MOVEMENT */
+    @keyframes galaxyMove{
+      0%{ background-position:0 0; }
+      100%{ background-position:300px 300px; }
     }
 
-    /* STAR FIELD (SMALL TWINKLING DOTS) */
-    body::before{
-      content:"";
+    body{
+      background-size:200% 200%;
+      animation: galaxyMove 22s ease-in-out infinite alternate;
+    }
+
+    /* -------------------------
+         STAR FIELD PREMIUM FX
+       ------------------------- */
+    .stars{
       position:fixed;
-      width:100%;
-      height:100%;
       top:0;
       left:0;
-      background-image:
-          radial-gradient(2px 2px at 20% 30%, white, transparent),
-          radial-gradient(1.5px 1.5px at 70% 80%, rgba(255,255,255,0.8), transparent),
-          radial-gradient(1.8px 1.8px at 40% 60%, rgba(255,255,255,0.9), transparent),
-          radial-gradient(1px 1px at 90% 20%, rgba(255,255,255,0.8), transparent),
-          radial-gradient(2px 2px at 10% 80%, rgba(255,255,255,0.9), transparent);
-      animation: starsTwinkle 4s infinite ease-in-out alternate;
+      width:100%;
+      height:100%;
       z-index:-1;
+      pointer-events:none;
+      background:
+        url('https://i.ibb.co/7WBNqjF/starfield.png') repeat;
+      animation: starFloat 60s linear infinite;
+      opacity:0.5;
     }
 
-    @keyframes starsTwinkle {
-      0% { opacity:0.6; }
-      100% { opacity:1; }
+    @keyframes starFloat{
+      from{ transform:translateY(0); }
+      to{ transform:translateY(-900px); }
     }
 
-    /* HEADER */
+    /* -------------------------
+         HEADER
+       ------------------------- */
     header{
       text-align:center;
-      padding:60px 20px;
-      color:white;
-      animation: fadeDown 1s ease;
+      padding:80px 20px 30px;
+      animation: fadeDown 1.2s ease;
     }
 
     header h1{
-      font-size:3rem;
-      text-shadow:0 0 15px rgba(255,255,255,0.9);
+      font-size:3.6rem;
+      font-weight:700;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      background: linear-gradient(90deg,#ff74f1,#9a6bff,#5ad8ff);
+      -webkit-background-clip:text;
+      color:transparent;
+      text-shadow:0 0 20px rgba(255,255,255,0.4);
     }
 
     header p{
       margin-top:10px;
-      font-size:1.3rem;
-      opacity:0.9;
+      font-size:1.2rem;
+      opacity:0.85;
     }
 
-    /* NAVIGATION */
+    /* -------------------------
+        NAVIGATION GLASS BAR
+       ------------------------- */
     nav{
-      background:rgba(255,255,255,0.1);
-      backdrop-filter:blur(10px);
-      padding:12px 0;
-      text-align:center;
-      border-radius:10px;
-      width:90%;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.15);
+      backdrop-filter:blur(12px);
+      width:85%;
       margin:0 auto;
-      box-shadow:0 0 15px rgba(255,255,255,0.2);
+      padding:14px 0;
+      text-align:center;
+      border-radius:14px;
+      box-shadow:0 0 20px rgba(255,255,255,0.15);
+      animation: fadeUp 1.3s ease;
     }
 
     nav a{
-      color:white;
-      margin:0 18px;
+      color:#e8e8e8;
+      margin:0 26px;
       text-decoration:none;
-      font-weight:600;
-      font-size:1.15rem;
-      transition:0.3s;
+      font-weight:500;
+      font-size:1.1rem;
+      transition:0.3s ease;
     }
 
     nav a:hover{
-      color:#ffeaa7;
-      text-shadow:0 0 12px #ffeaa7;
+      color:#ffbdf7;
+      text-shadow:0 0 12px #ffbdf7;
     }
 
-    /* SECTION */
+    /* -------------------------
+         MAIN GLASS CARD
+       ------------------------- */
     section{
-      max-width:900px;
+      max-width:950px;
       margin:70px auto;
-      padding:50px;
-      background:rgba(255,255,255,0.08);
-      border-radius:15px;
-      backdrop-filter:blur(10px);
-      color:white;
+      padding:60px;
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(14px);
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.18);
+      box-shadow:0 0 25px rgba(255,255,255,0.12);
+      animation: fadeUp 1.4s ease;
       text-align:center;
-      box-shadow:0 0 20px rgba(255,255,255,0.3);
-      animation: fadeUp 1.3s ease;
     }
 
     section h1{
       font-size:2.8rem;
-      margin-bottom:15px;
-      text-shadow:0 0 15px rgba(255,255,255,0.9);
+      margin-bottom:20px;
+      font-weight:600;
     }
 
     section p{
       font-size:1.2rem;
-      line-height:1.6;
+      line-height:1.7;
+      max-width:700px;
+      margin:0 auto;
+      opacity:0.9;
     }
 
-    /* FOOTER */
-    footer{
-      background:rgba(0,0,0,0.4);
+    /* BUTTON (CALL TO ACTION) */
+    .btn{
+      display:inline-block;
+      margin-top:35px;
+      padding:13px 32px;
+      border-radius:30px;
+      border:none;
+      background:linear-gradient(90deg,#9b4dff,#ff69d4);
       color:white;
-      text-align:center;
-      padding:20px;
-      font-size:1rem;
-      margin-top:40px;
+      font-size:1.1rem;
+      font-weight:600;
+      transition:0.3s;
+      cursor:pointer;
+      box-shadow:0 0 20px rgba(255,130,240,0.4);
     }
 
-    /* ANIMATIONS */
+    .btn:hover{
+      transform:translateY(-4px) scale(1.05);
+      box-shadow:0 0 30px rgba(255,130,240,0.7);
+    }
+
+    /* -------------------------
+         FOOTER
+       ------------------------- */
+    footer{
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
+      color:#bfbfbf;
+      font-size:0.95rem;
+    }
+
+    /* -------------------------
+         ANIMATIONS
+       ------------------------- */
     @keyframes fadeUp{
-      from{ opacity:0; transform:translateY(40px); }
-      to{ opacity:1; transform:translateY(0); }
+      from{ opacity:0; transform:translateY(40px);}
+      to{ opacity:1; transform:translateY(0);}
     }
 
     @keyframes fadeDown{
-      from{ opacity:0; transform:translateY(-40px); }
-      to{ opacity:1; transform:translateY(0); }
+      from{ opacity:0; transform:translateY(-40px);}
+      to{ opacity:1; transform:translateY(0);}
     }
 
-    /* RESPONSIVE */
     @media(max-width:600px){
-      header h1{ font-size:2.2rem; }
+      header h1{ font-size:2.4rem; letter-spacing:1px; }
       nav a{ display:block; margin:10px 0; }
-      section{ padding:30px; width:90%; }
-      section h1{ font-size:2.2rem; }
+      section{ padding:35px; }
     }
+
   </style>
 </head>
 
 <body>
 
+  <!-- ⭐ PREMIUM STARFIELD BACKGROUND -->
+  <div class="stars"></div>
+
   <header>
-    <h1>🌌 Hanshika</h1>
-    <p>💻 Web Developer • 🎨 Designer • 🚀 Dreaming Big</p>
+    <h1>Hanshika</h1>
+    <p>Creative Web Developer • UI Designer</p>
   </header>
 
   <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="about.html" target="_blank">👩‍💼 About</a>
-    <a href="project.html" target="_blank">📁 Projects</a>
-    <a href="resume.html" target="_blank">📄 Resume</a>
-    <a href="contact.html" target="_blank">📞 Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html" target="_blank">About</a>
+    <a href="project.html" target="_blank">Projects</a>
+    <a href="resume.html" target="_blank">Resume</a>
+    <a href="contact.html" target="_blank">Contact</a>
   </nav>
 
   <section>
-    <h1>👋 Welcome to the Galaxy</h1>
+    <h1>Welcome to My Portfolio</h1>
     <p>
-      Explore my universe of beautiful designs, creative ideas,  
-      and innovative coding projects. 🌟  
+      I design and develop beautiful, modern and smooth user experiences.  
+      My work blends creativity, functionality and clean development practices —  
+      crafted to leave a lasting impression.
     </p>
+
+    <a href="project.html" target="_blank">
+      <button class="btn">View My Projects</button>
+    </a>
   </section>
 
   <footer>
-    <p>© 2025 Hanshika. All Rights Reserved.</p>
+    © 2025 Hanshika — Portfolio Project.
   </footer>
 
 </body>
