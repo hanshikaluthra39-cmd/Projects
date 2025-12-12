@@ -9,76 +9,117 @@
       margin: 0;
       padding:0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: "Poppins", sans-serif;
     }
 
+    /* 🌌 GALAXY BACKGROUND */
     body{
-      background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOzwSuhQCFMf-A88Ynl3on7TMDDyyzrASjiw&s');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-      padding:20px;
-      color: #222;
+      height: 100vh;
+      background: radial-gradient(circle at top, #1a0033, #000 70%);
+      overflow-x: hidden;
+      color: #fff;
+      padding: 20px;
+      position: relative;
     }
 
-    /* NAVBAR */
-    nav {
-      background: rgba(207, 131, 191, 0.8);
+    /* ✨ STARS */
+    .stars, .stars2, .stars3{
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background-repeat: repeat;
+      background-size: contain;
+      z-index:-1;
+    }
+
+    .stars{
+      background-image: url('https://i.imgur.com/eC3xKQ1.png');
+      animation: starMove 50s linear infinite;
+      opacity:0.6;
+    }
+
+    .stars2{
+      background-image: url('https://i.imgur.com/eC3xKQ1.png');
+      animation: starMove 100s linear infinite;
+      opacity:0.4;
+    }
+
+    .stars3{
+      background-image: url('https://i.imgur.com/eC3xKQ1.png');
+      animation: starMove 150s linear infinite;
+      opacity:0.2;
+    }
+
+    @keyframes starMove{
+      from{ transform: translateY(0); }
+      to{ transform: translateY(-2000px); }
+    }
+
+    /* 🟣 NAVBAR */
+    nav{
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       text-align: center;
       padding: 12px 0;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
       position: sticky;
-      top: 0;
-      backdrop-filter: blur(3px);
+      top:0;
+      z-index: 20;
     }
 
-    nav a {
-      color: white;
+    nav a{
+      color: #f7caff;
       text-decoration: none;
       margin: 0 15px;
-      font-weight: bold;
+      font-weight: 600;
       transition: 0.3s;
+      font-size: 18px;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-      color: #ffe9fd;
-      transform: scale(1.1);
+    nav a:hover{
+      color:#fff;
+      text-shadow: 0 0 10px #ff7cff;
     }
 
     /* HEADING */
     h1{
       text-align:center;
       margin-top:20px;
-      color:#3d003d;
-      text-shadow: 2px 2px 4px rgba(255,255,255,0.3);
+      color:#ffb8ff;
+      font-size: 40px;
+      text-shadow: 0 0 15px #ff63ff;
       animation: fadeIn 1.5s ease-in-out;
     }
 
-    hr{
-      border: none;
-      height: 2px;
-      background:#cf83bf;
-      margin:15px 0;
-      border-radius:5px;
+    /* SECTION HEADINGS */
+    h2{
+      font-size:26px;
+      margin:20px 0 10px;
+      color:#ff99ff;
+      text-shadow: 0 0 10px #ff40ff;
     }
 
-    h2{
-      color:#5a005a;
-      margin-bottom:10px;
+    /* GLASS CARD STYLE */
+    .card{
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding:20px;
+      margin:15px 0;
+      border-radius:12px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 12px rgba(255,255,255,0.08);
     }
 
     p, li{
       font-size:18px;
       line-height:1.6;
+      color:#e3d2ff;
     }
 
-    ul{
-      margin-left:20px;
-    }
-
-    /* ANIMATION */
     @keyframes fadeIn{
       from{opacity:0; transform: translateY(-20px);}
       to{opacity:1; transform: translateY(0);}
@@ -86,6 +127,11 @@
   </style>
 </head>
 <body>
+
+<!-- 🌌 STARS LAYERS -->
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
 
 <!-- NAVBAR -->
 <nav>
@@ -96,46 +142,48 @@
   <a href="contact.html" target="_blank">📞 Contact</a>
 </nav>
 
-<!-- NAME -->
-<h1>👩‍💻 HANSHIKA</h1>
-<hr>
+<h1>👩‍💻 HANSHIKA – Resume</h1>
 
-<p><strong>📧 Email:</strong> hanshikaluthra39@gmail.com</p>
-<p><strong>📞 Phone:</strong> [Your phone number here]</p>
-<p><strong>📍 Address:</strong> Baldev Nagar, Ambala City</p>
-<p><strong>📮 Pin Code:</strong> 134003</p>
+<div class="card">
+  <p><strong>📧 Email:</strong> hanshikaluthra39@gmail.com</p>
+  <p><strong>📞 Phone:</strong> [Your phone number]</p>
+  <p><strong>📍 Address:</strong> Baldev Nagar, Ambala City</p>
+  <p><strong>📮 Pin Code:</strong> 134003</p>
+</div>
 
-<hr>
-<h2>🎯 <strong>Career Objective</strong></h2>
-<p>
-  A motivated and hard-working student with strong interest in web development 💻.
-  Seeking an opportunity to learn, grow, and contribute to a professional team 🚀.
-</p>
+<div class="card">
+  <h2>🎯 Career Objective</h2>
+  <p>A motivated student passionate about web development 🌐, eager to learn and grow in a professional environment.</p>
+</div>
 
-<hr>
-<h2>🎓 <strong>Education</strong></h2>
-<p>📘 Matriculation (10th) – 76%</p>
+<div class="card">
+  <h2>🎓 Education</h2>
+  <p>📘 Matriculation (10th) – 76%</p>
+</div>
 
-<hr>
-<h2>🖥️ <strong>Computer Skills</strong></h2>
-<p><strong>🧰 Basic:</strong> MS Word, MS Excel, MS PowerPoint</p>
-<p><strong>🌐 IT Skills:</strong> HTML, CSS</p>
+<div class="card">
+  <h2>🖥️ Computer Skills</h2>
+  <p><strong>Basic:</strong> MS Word, Excel, PowerPoint</p>
+  <p><strong>IT Skills:</strong> HTML, CSS</p>
+</div>
 
-<hr>
-<h2>💪 <strong>Strengths</strong></h2>
-<ul>
-  <li>😊 Positive attitude</li>
-  <li>🗣️ Good communication skills</li>
-  <li>⚡ Quick learner</li>
-  <li>🛠️ Hard-working</li>
-</ul>
+<div class="card">
+  <h2>💪 Strengths</h2>
+  <ul>
+    <li>Positive Attitude</li>
+    <li>Good Communication</li>
+    <li>Quick Learner</li>
+    <li>Hard-working</li>
+  </ul>
+</div>
 
-<hr>
-<h2>🎵 <strong>Hobbies</strong></h2>
-<ul>
-  <li>✍️ Writing & 📖 Reading</li>
-  <li>🎧 Listening to music</li>
-</ul>
+<div class="card">
+  <h2>🎵 Hobbies</h2>
+  <ul>
+    <li>Writing & Reading</li>
+    <li>Listening to Music</li>
+  </ul>
+</div>
 
 </body>
 </html>
