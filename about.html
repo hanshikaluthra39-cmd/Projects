@@ -2,94 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Hanshika's Portfolio</title>
+  <title>About – Hanshika</title>
+
   <style>
-    body {
-      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOzwSuhQCFMf-A88Ynl3on7TMDDyyzrASjiw&s);
-      background-repeat: no-repeat;
-      font-family: Arial, sans-serif;
-      color: #fff;
+    * {
       margin: 0;
-      padding: 20px;
-      background-size: cover;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
     }
 
+    body {
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+      padding: 20px;
+    }
+
+    /* ---------------------------
+       ANIMATED GALAXY BACKGROUND 
+    ----------------------------*/
+    .galaxy {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, #1a0535, #000);
+      top: 0;
+      left: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: twinkle 2s infinite;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+
+    /* ---------------------------
+       NAVBAR
+    ----------------------------*/
     nav {
-      background: #cf83bf;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
       text-align: center;
-      padding: 10px 0;
-      margin-bottom: 30px;
-      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(128,0,255,0.4);
     }
 
     nav a {
       color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+      margin: 0 18px;
       font-size: 1.1em;
-      transition: color 0.3s;
+      text-decoration: none;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
-      
+      color: #d9a7ff;
+      text-shadow: 0 0 10px #d9a7ff;
     }
 
-    /* Container for main about section */
+    /* ---------------------------
+       ABOUT CONTAINER (GLASS)
+    ----------------------------*/
     .about-container {
-      background: rgba(0, 0, 0, 0.6);
-      max-width: 900px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+      max-width: 1000px;
       margin: 0 auto;
+      padding: 40px;
+      border-radius: 20px;
       display: flex;
+      gap: 50px;
       align-items: center;
-      gap: 40px;
-      padding: 25px;
-      border-radius: 15px;
       flex-wrap: wrap;
+      box-shadow: 0 0 25px rgba(128,0,255,0.5);
     }
 
     .about-text {
-      flex: 1 1 400px;
+      flex: 1 1 450px;
     }
 
     .about-text h2 {
-      text-align: left;
+      font-size: 2.5em;
       margin-bottom: 15px;
-      font-size: 2em;
+      text-shadow: 0 0 15px #cd72ff;
     }
 
     .about-text p {
-      font-size: 1.1em;
-      line-height: 1.5;
-    }
-
-    .profile-image {
-      flex: 0 0 200px;
-      border: 5px solid black;
-      border-radius: 25%;
-      box-shadow: 0 0 10px #000;
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    blockquote {
-      background: rgba(0, 0, 0, 0.6);
-      max-width: 900px;
-      margin: 30px auto 0 auto;
-      padding: 20px 30px;
-      border-radius: 15px;
-      font-size: 1.1em;
+      font-size: 1.2em;
       line-height: 1.6;
+      opacity: 0.9;
     }
 
-    blockquote p {
-      margin: 8px 0;
+    /* ---------------------------
+       PROFILE IMAGE (BIGGER + CIRCLE)
+    ----------------------------*/
+    .profile-image {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 5px solid #bb72ff;
+      box-shadow: 0 0 25px #b765ff;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* ---------------------------
+       DETAILS SECTION (GLASS CARD)
+    ----------------------------*/
+    blockquote {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+      max-width: 1000px;
+      margin: 35px auto;
+      padding: 25px 35px;
+      border-radius: 20px;
+      line-height: 1.8;
+      font-size: 1.1em;
+      box-shadow: 0 0 20px rgba(128,0,255,0.4);
     }
 
     blockquote a {
-      color: #74b9ff;
+      color: #a7d3ff;
       text-decoration: none;
     }
 
@@ -97,53 +145,69 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 700px) {
       .about-container {
-        flex-direction: column;
         text-align: center;
+        flex-direction: column;
       }
-      .about-text, .profile-image {
-        flex: unset;
-      }
+
       .profile-image {
-        margin: 0 auto;
+        margin-bottom: 20px;
       }
     }
   </style>
 </head>
+
 <body>
 
+  <!-- GALAXY BACKGROUND -->
+  <div class="galaxy" id="galaxy"></div>
+
   <nav>
-    <a href="index.html" target="_blank">🏠 Home</a>
-    <a href="about.html" target="_blank">👩‍💻 About</a>
-    <a href="project.html" target="_blank">📁 Projects</a>
-    <a href="resume.html" target="_blank">📄 Resume</a>
-    <a href="contact.html" target="_blank">📞 Contact</a>
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">👩‍💻 About</a>
+    <a href="project.html">📁 Projects</a>
+    <a href="resume.html">📄 Resume</a>
+    <a href="contact.html">📞 Contact</a>
   </nav>
 
   <section class="about-container">
     <div class="about-text">
       <h2>👋 About Me</h2>
       <p>
-        Hello! I'm <strong>Hanshika</strong>, a passionate web developer who loves creating clean and responsive websites. 🌐<br>
-        I'm constantly learning and exploring new technologies to improve my skills and create better user experiences. 🚀
+        Hi! I'm <strong>Hanshika</strong>, a passionate web developer who loves
+        building creative and modern websites.  
+        I enjoy learning, designing, and improving my skills day by day! 🚀
       </p>
     </div>
-    <img src="hanshuu.jpg" 
-      alt="HANSHIKA IMAGE " 
-      class="profile-image"
-    >
+
+    <!-- Larger + Circular Image -->
+    <img src="hanshuu.jpg" class="profile-image" alt="Hanshika">
   </section>
 
   <blockquote>
-    <p>👤 <strong>Name:</strong> Hanshika</p>     
+    <p>👤 <strong>Name:</strong> Hanshika</p>
     <p>🎂 <strong>Birthday:</strong> 14 December 2009</p>
     <p>🎓 <strong>Qualification:</strong> Matriculation</p>
-    <p>📞 <strong>Phone:</strong> [Your phone number here]</p>
+    <p>📞 <strong>Phone:</strong> [Your Number]</p>
     <p>📧 <strong>Email:</strong> hanshikaluthra39@gmail.com</p>
     <p>🌆 <strong>City:</strong> Ambala, Haryana</p>
     <p>🔗 <strong>Website:</strong> <a href="https://hanshikatech.shop" target="_blank">hanshikatech.shop</a></p>
   </blockquote>
+
+  <!-- STAR GENERATOR -->
+  <script>
+    const galaxy = document.getElementById("galaxy");
+
+    for (let i = 0; i < 200; i++) {
+      let star = document.createElement("div");
+      star.classList.add("star");
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+      galaxy.appendChild(star);
+    }
+  </script>
 
 </body>
 </html>
